@@ -1,0 +1,248 @@
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background-color:#f6eee3;
+    background-image: radial-gradient(#e6ccb2 1px, transparent 1px);
+    background-size:30px 30px;
+}
+
+/* NAVBAR */
+nav{
+    background-color:#d8c3a5;
+    padding:20px;
+    text-align:center;
+    border-radius:0px 0px 25px 25px;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+
+    animation: slideDown 1s ease;
+}
+
+nav a{
+    text-decoration:none;
+    color:#5c4033;
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:1px;
+
+    margin:0 12px;
+
+    transition:0.3s;
+
+    animation: slideUp 1s ease;
+    animation-fill-mode: both;
+}
+
+nav a:hover{
+    color:white;
+
+}
+
+/* TITLE */
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    color:#5c4033;
+
+    margin:40px auto;
+
+    display:table;
+
+    padding:25px 40px;
+
+    background-color:#fffaf5;
+
+    border:4px solid #d8c3a5;
+    border-radius:30px;
+
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+
+    animation: slideUp 1s ease, floatBox 4s ease-in-out infinite;
+
+}
+
+/* TIMELINE SECTION */
+.section{
+    width:70%;
+    margin:50px auto;
+    background-color:#fffaf5;
+    border:3px solid #d8c3a5;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.4s ease;
+}
+
+.section:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGES */
+.edu-pic{
+    width:220px;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    margin:10px;
+    border:5px solid #c8a27a;
+}
+
+.logo{
+    width:120px;
+    margin-top:10px;
+}
+
+/* TEXT */
+p{
+    font-size:20px;
+    color:#7b5e57;
+    line-height:1.7;
+    margin-top:15px;
+}
+
+/* DIVIDER */
+.divider{
+    text-align:center;
+    font-size:24px;
+    color:#c8a27a;
+    margin:20px 0;
+
+}
+
+.timeline{
+    position:relative;
+    width:80%;
+    margin:60px auto;
+}
+
+/* center line */
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    height:calc(100% - 120px);
+    width:4px;
+    background-color:#c8a27a;
+    transform:translateX(-50%);
+}
+
+/* each box */
+.timeline-item{
+    width:45%;
+    padding:25px;
+    background-color:#fffaf5;
+    border:3px solid #d8c3a5;
+    border-radius:25px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:60px;
+    position:relative;
+    transition:0.4s ease;
+
+    animation: slideUp 1s ease, floatBox 4s ease-in-out infinite;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+.timeline-item:hover{
+    transform:translateY(-8px);
+}
+
+/* left side */
+.left{
+    left:0;
+}
+
+/* right side */
+.right{
+    left:55%;
+}
+
+/* images */
+.edu-pic{
+    width:200px;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid #c8a27a;
+    margin:10px;
+}
+
+.logo{
+    width:100px;
+    margin-top:10px;
+}
+
+/* text */
+.timeline-item p{
+
+    font-size:20px;
+
+    color:#7b5e57;
+
+    line-height:1.7;
+
+    text-align:center;
+}
+.edu-logo{
+
+    width:170px;
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    transition:0.4s ease;
+}
+
+.uitm-logo{
+
+    width:220px;
+}
+.edu-logo:hover{
+
+    transform:translateY(-50%) scale(1.08);
+}
+
+.timeline-item.left .edu-logo{
+
+    right:-240px;
+}
+
+.timeline-item.right .edu-logo{
+
+    left:-240px;
+
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatBox{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+
+}

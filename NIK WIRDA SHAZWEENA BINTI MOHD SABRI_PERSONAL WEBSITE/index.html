@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html">⌂ Home</a>
+
+<a href="about.html">♡ About Me</a>
+
+<a href="education.html">✿ Education</a>
+
+<a href="family.html">☻ My Family</a>
+
+<a href="university.html">☕ University Life</a>
+
+<a href="hobby.html">♫ Hobby</a>
+
+<a href="happy.html">✧ Happy Moments</a>
+
+<a href="dreams.html">☁ My Dreams</a>
+
+</nav>
+
+<div class="top-divider">
+
+✿ ═══════ ☕ ═══════ ✿
+
+</div>
+
+<div class="home">
+
+<div class="home-text">
+
+<h1>Shazweena's Digital Diary</h1>
+
+<div class="middle-divider">
+
+♡ ─────── ✧ ─────── ♡
+
+</div>
+
+<p>
+Welcome to my personal space where every page tells a story about my life, precious memories, educational journey, meaningful experiences, passions, dreams and the beautiful moments that continue shaping who I am today. This website is a glimpse into my world, filled with inspiration, growth, happiness and everything I cherish the most.
+</p>
+
+<p class="quote">
+
+“Collecting memories, chasing dreams, and finding beauty in every little moment.”
+
+</p>
+
+</div>
+
+<div class="home-image">
+
+<button class="slide-btn left" onclick="previousImage()">❮</button>
+
+<img id="slideshow" src="images/photo1.jpg">
+
+<button class="slide-btn right" onclick="nextImage()">❯</button></div>
+
+</div>
+
+
+<script>
+
+let images = [
+"images/photo1.jpg",
+"images/photo2.jpg",
+"images/photo3.jpg",
+"images/photo4.jpg",
+"images/photo5.jpg"
+];
+
+let index = 0;
+
+function changeImage(){
+
+    let slideshow = document.getElementById("slideshow");
+
+    slideshow.style.opacity = 0;
+
+    setTimeout(function(){
+
+    index++;
+
+    if(index >= images.length){
+            index = 0;
+    }
+
+    slideshow.src = images[index];
+
+    slideshow.style.opacity = 1;
+
+    },500);
+}
+
+setInterval(changeImage,3000);
+
+function nextImage(){
+
+    index++;
+
+    if(index >= images.length){
+        index = 0;
+    }
+
+    document.getElementById("slideshow").src = images[index];
+}
+
+function previousImage(){
+
+    index--;
+
+    if(index < 0){
+        index = images.length - 1;
+    }
+
+    document.getElementById("slideshow").src = images[index];
+}
+
+</script>
+
+<div class="menu-cards">
+<a href="about.html" class="card-link">
+<div class="card">
+    <h3>♡ ABOUT ME</h3>
+    <img src="images/about.jpg">
+    <p>A glimpse into who I am</p>
+</div>
+</a>
+
+<a href="education.html" class="card-link">
+<div class="card">
+    <h3>✿ EDUCATION</h3>
+    <img src="images/education.jpg">
+    <p>My educational journey</p>
+</div>
+</a>
+
+<a href="family.html" class="card-link">
+<div class="card">
+    <h3>☻ MY FAMILY</h3>
+    <img src="images/family.jpg">
+    <p>The people closest to me</p>
+</div>
+</a>
+
+<a href="university.html" class="card-link">
+<div class="card">
+    <h3>☕ UNIVERSITY LIFE</h3>
+    <img src="images/university.jpg">
+    <p>Moments throughout university</p>
+</div>
+</a>
+
+<a href="hobby.html" class="card-link">
+<div class="card">
+    <h3>♫ HOBBY</h3>
+    <img src="images/hobby.jpg">
+    <p>Things I enjoy doing</p>
+</div>
+</a>
+
+<a href="happy.html" class="card-link">
+<div class="card">
+    <h3>✧ HAPPY MOMENTS</h3>
+    <img src="images/moments.jpg">
+    <p>Memories worth remembering</p>
+</div>
+</a>
+
+<a href="dreams.html" class="card-link">
+<div class="card">
+    <h3>☁ MY DREAMS</h3>
+    <img src="images/dream.jpg">
+    <p>Dreams and future aspirations</p>
+</div>
+</a>
+
+</div>
+
+<div class="music-player">
+
+<audio autoplay loop>
+    <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</body>
+</html>
